@@ -99,21 +99,21 @@
             100% { width: 65%; }
         }
 
-.about-link {
-    margin-top: 20px;
-}
+        .about-link {
+            margin-top: 20px;
+        }
 
-.about-link a {
-    color: #cccccc;
-    font-size: 16px;
-    transition: all 0.3s;
-    text-decoration: underline;
-}
+        .about-link a {
+            color: #cccccc;
+            font-size: 16px;
+            transition: all 0.3s;
+            text-decoration: underline;
+        }
 
-.about-link a:hover {
-    color: #cccccc;
-    text-decoration: underline;
-}
+        .about-link a:hover {
+            color: #cccccc;
+            text-decoration: underline;
+        }
     </style>
 </head>
 <body>
@@ -131,21 +131,41 @@
         </div>
         
         <p>Çalışmalarımız en kısa sürede tamamlanacaktır. Anlayışınız için teşekkür ederiz.</p>
-       <div class="about-link">
-    <a href="/hakkimizda">Hakkımızda</a>
-</div>
-        <div class="online-users" id="onlineCount"></div>
+        <div class="about-link">
+            <a href="/hakkimizda">Hakkımızda</a>
+        </div>
+        <div class="online-users" id="onlineCount">2.780 kişi şu anda çevrimiçi.</div>
     </div>
 
     <script>
+        let currentCount = 2780;
+        const minCount = 2700; // Minimum sınır (isteğe bağlı)
+        const maxCount = 2850; // Maksimum sınır (isteğe bağlı)
+        
         function updateOnlineCount() {
-            const count = Math.floor(Math.random() * (6000 - 2500 + 1)) + 2500;
-            const formatted = count.toLocaleString('tr-TR');
+            // 1-50 arası rastgele değişim miktarı
+            const changeAmount = Math.floor(Math.random() * 50) + 1;
+            
+            // Rastgele artış veya azalış (50% şans)
+            const isIncrease = Math.random() > 0.5;
+            
+            // Sayıyı güncelle
+            currentCount += isIncrease ? changeAmount : -changeAmount;
+            
+            // Sınır kontrolü
+            if (currentCount < minCount) currentCount = minCount;
+            if (currentCount > maxCount) currentCount = maxCount;
+            
+            // Sayıyı biçimlendir (binlik ayırma)
+            const formatted = currentCount.toLocaleString('tr-TR');
             document.getElementById("onlineCount").innerText = formatted + " kişi şu anda çevrimiçi.";
         }
 
-        updateOnlineCount(); // İlk yüklemede
-        setInterval(updateOnlineCount, 10000); // Her 10 saniyede bir güncelle
+        // İlk güncelleme
+        updateOnlineCount();
+        
+        // Her 10 saniyede bir güncelle
+        setInterval(updateOnlineCount, 10000);
     </script>
 </body>
 </html>
