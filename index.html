@@ -1,18 +1,118 @@
+
 <!DOCTYPE html>
 <html lang="tr">
 <head>
     <meta charset="UTF-8">
-    <title>Yayındayız</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bakım Modu | Sitemiz Yenileniyor</title>
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+        
         body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #333;
             text-align: center;
-            font-family: Arial, sans-serif;
-            margin-top: 100px;
+        }
+        
+        .maintenance-container {
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 15px;
+            padding: 40px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+            width: 90%;
+            animation: fadeIn 0.8s ease-out;
+        }
+        
+        h1 {
+            color: #2c3e50;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+        
+        p {
+            font-size: 18px;
+            line-height: 1.6;
+            margin-bottom: 30px;
+        }
+        
+        .icon {
+            font-size: 80px;
+            margin-bottom: 20px;
+            color: #3498db;
+        }
+        
+        .progress-container {
+            background-color: #ecf0f1;
+            border-radius: 10px;
+            height: 10px;
+            margin: 30px 0;
+            overflow: hidden;
+        }
+        
+        .progress-bar {
+            background: linear-gradient(90deg, #3498db, #2ecc71);
+            height: 100%;
+            width: 65%;
+            border-radius: 10px;
+            animation: progressAnimation 2s ease-in-out infinite;
+        }
+        
+        .social-links {
+            margin-top: 30px;
+        }
+        
+        .social-links a {
+            color: #3498db;
+            font-size: 24px;
+            margin: 0 10px;
+            transition: all 0.3s;
+        }
+        
+        .social-links a:hover {
+            color: #2980b9;
+            transform: translateY(-3px);
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        @keyframes progressAnimation {
+            0% { width: 65%; }
+            50% { width: 70%; }
+            100% { width: 65%; }
+        }
+        
+        .contact-info {
+            margin-top: 20px;
+            font-style: italic;
+            color: #7f8c8d;
         }
     </style>
 </head>
 <body>
-    <h1>enesozen.com.tr</h1>
-    <p>Web sitemiz yapım aşamasında. Yakında buradayız!</p>
+    <div class="maintenance-container">
+        <div class="icon">🔧</div>
+        <h1>Bakım Çalışması Devam Ediyor</h1>
+        <p>Sitemiz şu anda planlı bakım çalışmaları nedeniyle geçici olarak hizmet dışıdır. Daha iyi bir deneyim sunmak için çalışıyoruz. Lütfen kısa bir süre sonra tekrar kontrol edin.</p>
+        
+        <div class="progress-container">
+            <div class="progress-bar"></div>
+        </div>
+        
+        <p>Çalışmalarımız en kısa sürede tamamlanacaktır. Anlayışınız için teşekkür ederiz.</p>
+      
+        
+     
+    </div>
 </body>
 </html>
