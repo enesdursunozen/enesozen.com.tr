@@ -19,7 +19,7 @@
             color: #e0e0e0;
             text-align: center;
         }
-        
+
         .maintenance-container {
             background-color: rgba(30, 30, 30, 0.9);
             border-radius: 15px;
@@ -30,14 +30,14 @@
             animation: fadeIn 0.8s ease-out;
             border: 1px solid #333;
         }
-        
+
         h1 {
             color: #ffffff;
             margin-bottom: 15px;
             font-weight: 600;
             font-size: 2.2rem;
         }
-        
+
         h2 {
             color: #bbbbbb;
             margin-top: 0;
@@ -45,26 +45,26 @@
             font-weight: 400;
             font-size: 1.5rem;
         }
-        
+
         p {
             font-size: 18px;
             line-height: 1.6;
             margin-bottom: 30px;
             color: #cccccc;
         }
-        
+
         .icon {
             font-size: 80px;
             margin-bottom: 20px;
             color: #4a6fa5;
         }
-        
+
         .divider {
             height: 1px;
             background: linear-gradient(90deg, transparent, #444, transparent);
             margin: 30px 0;
         }
-        
+
         .progress-container {
             background-color: #252525;
             border-radius: 10px;
@@ -72,7 +72,7 @@
             margin: 30px 0;
             overflow: hidden;
         }
-        
+
         .progress-bar {
             background: linear-gradient(90deg, #4a6fa5, #5d8bce);
             height: 100%;
@@ -80,39 +80,23 @@
             border-radius: 10px;
             animation: progressAnimation 2s ease-in-out infinite;
         }
-        
-        .social-links {
-            margin-top: 30px;
+
+        .online-users {
+            margin-top: 20px;
+            font-size: 16px;
+            color: #888;
+            font-style: italic;
         }
-        
-        .social-links a {
-            color: #5d8bce;
-            font-size: 24px;
-            margin: 0 10px;
-            transition: all 0.3s;
-            display: inline-block;
-        }
-        
-        .social-links a:hover {
-            color: #7aa6e2;
-            transform: translateY(-3px);
-        }
-        
+
         @keyframes fadeIn {
             from { opacity: 0; transform: translateY(20px); }
             to { opacity: 1; transform: translateY(0); }
         }
-        
+
         @keyframes progressAnimation {
             0% { width: 65%; }
             50% { width: 70%; }
             100% { width: 65%; }
-        }
-        
-        .contact-info {
-            margin-top: 20px;
-            font-style: italic;
-            color: #777;
         }
     </style>
 </head>
@@ -131,10 +115,19 @@
         </div>
         
         <p>Çalışmalarımız en kısa sürede tamamlanacaktır. Anlayışınız için teşekkür ederiz.</p>
-        
-    
-        
-       
+
+        <div class="online-users" id="onlineCount"></div>
     </div>
+
+    <script>
+        function updateOnlineCount() {
+            const count = Math.floor(Math.random() * (6000 - 2500 + 1)) + 2500;
+            const formatted = count.toLocaleString('tr-TR');
+            document.getElementById("onlineCount").innerText = formatted + " kişi şu anda çevrimiçi.";
+        }
+
+        updateOnlineCount(); // İlk yüklemede
+        setInterval(updateOnlineCount, 10000); // Her 10 saniyede bir güncelle
+    </script>
 </body>
 </html>
