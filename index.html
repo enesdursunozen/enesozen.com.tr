@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bakım Modu | Sitemiz Yenileniyor</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
         
@@ -12,12 +13,14 @@
             background: #121212;
             margin: 0;
             padding: 0;
-            height: 100vh;
+            min-height: 100vh;
             display: flex;
+            flex-direction: column;
             justify-content: center;
             align-items: center;
             color: #e0e0e0;
             text-align: center;
+            position: relative;
         }
 
         .maintenance-container {
@@ -29,6 +32,7 @@
             width: 90%;
             animation: fadeIn 0.8s ease-out;
             border: 1px solid #333;
+            margin-bottom: 50px;
         }
 
         h1 {
@@ -88,17 +92,6 @@
             font-style: italic;
         }
 
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        @keyframes progressAnimation {
-            0% { width: 65%; }
-            50% { width: 70%; }
-            100% { width: 65%; }
-        }
-
         .about-link {
             margin-top: 20px;
         }
@@ -111,8 +104,77 @@
         }
 
         .about-link a:hover {
-            color: #cccccc;
+            color: #4a6fa5;
             text-decoration: underline;
+        }
+
+        .footer {
+            width: 100%;
+            padding: 25px 0;
+            margin-top: auto;
+            background-color: rgba(20, 20, 20, 0.8);
+            border-top: 1px solid #333;
+        }
+
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            margin-top: 15px;
+        }
+
+        .social-icon {
+            color: #bbbbbb;
+            font-size: 24px;
+            transition: all 0.3s ease;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: rgba(255, 255, 255, 0.05);
+        }
+
+        .social-icon:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .social-icon.x-twitter {
+            font-size: 22px;
+        }
+        
+        .social-icon.x-twitter:hover {
+            color: #000000;
+            background-color: rgba(29, 161, 242, 0.1);
+        }
+
+        .social-icon.linkedin:hover {
+            color: #0077B5;
+            background-color: rgba(0, 119, 181, 0.1);
+        }
+
+        .social-icon.github:hover {
+            color: #f5f5f5;
+            background-color: rgba(110, 84, 148, 0.1);
+        }
+
+        .copyright {
+            margin-top: 20px;
+            font-size: 14px;
+            color: #888;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes progressAnimation {
+            0% { width: 65%; }
+            50% { width: 70%; }
+            100% { width: 65%; }
         }
     </style>
 </head>
@@ -137,34 +199,42 @@
         <div class="online-users" id="onlineCount">2.780 kişi şu anda çevrimiçi.</div>
     </div>
 
+    <footer class="footer">
+        <div class="social-icons">
+            <a href="https://x.com/beyzbjk1903" target="_blank" class="social-icon x-twitter">
+                <i class="fab fa-x-twitter"></i>
+            </a>
+            <a href="https://www.linkedin.com/in/enes-dursun-%C3%B6zen-b977b8301/" target="_blank" class="social-icon linkedin">
+                <i class="fab fa-linkedin-in"></i>
+            </a>
+            <a href="https://github.com/enesdursunozen" target="_blank" class="social-icon github">
+                <i class="fab fa-github"></i>
+            </a>
+        </div>
+        <div class="copyright">
+            &copy; 2023 Şirket Adı. Tüm hakları saklıdır.
+        </div>
+    </footer>
+
     <script>
         let currentCount = 2780;
-        const minCount = 2700; // Minimum sınır (isteğe bağlı)
-        const maxCount = 2850; // Maksimum sınır (isteğe bağlı)
+        const minCount = 2700;
+        const maxCount = 2850;
         
         function updateOnlineCount() {
-            // 1-50 arası rastgele değişim miktarı
             const changeAmount = Math.floor(Math.random() * 50) + 1;
-            
-            // Rastgele artış veya azalış (50% şans)
             const isIncrease = Math.random() > 0.5;
             
-            // Sayıyı güncelle
             currentCount += isIncrease ? changeAmount : -changeAmount;
             
-            // Sınır kontrolü
             if (currentCount < minCount) currentCount = minCount;
             if (currentCount > maxCount) currentCount = maxCount;
             
-            // Sayıyı biçimlendir (binlik ayırma)
             const formatted = currentCount.toLocaleString('tr-TR');
             document.getElementById("onlineCount").innerText = formatted + " kişi şu anda çevrimiçi.";
         }
 
-        // İlk güncelleme
         updateOnlineCount();
-        
-        // Her 10 saniyede bir güncelle
         setInterval(updateOnlineCount, 10000);
     </script>
 </body>
