@@ -11,8 +11,6 @@
     <style>
       @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap");
 
-   
-      
       body {
         font-family: "Poppins", sans-serif;
         background: #121212;
@@ -27,6 +25,13 @@
         color: #e0e0e0;
         text-align: center;
         position: relative;
+        overflow-y: hidden; /* PC'de kaydırma çubuğunu gizle */
+      }
+
+      @media only screen and (max-width: 768px) {
+        body {
+          overflow-y: auto; /* Mobilde kaydırma çubuğunu göster */
+        }
       }
 
       .maintenance-container {
@@ -39,6 +44,14 @@
         animation: fadeIn 0.8s ease-out;
         border: 1px solid #333;
         margin-bottom: 50px;
+        overflow-y: auto; /* İçerik uzunsa konteynır içinde kaydırma yap */
+        max-height: 90vh; /* Maksimum yükseklik belirle */
+      }
+
+      @media only screen and (max-width: 768px) {
+        .maintenance-container {
+          max-height: none; /* Mobilde maksimum yükseklik kısıtlamasını kaldır */
+        }
       }
 
       h1 {
@@ -117,7 +130,6 @@
       .footer {
         width: 100%;
         padding: 25px 0;
-
         background-color: rgba(20, 20, 20, 0.8);
         border-top: 1px solid #333;
       }
