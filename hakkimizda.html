@@ -1,98 +1,111 @@
 <!DOCTYPE html>
-<html lang="tr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- Coding By CodingNepal - codingnepalweb.com -->
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Hakkımızda</title>
+ 
+  </head>
+  <body>
     <style>
-        body {
-            font-family: 'Arial', sans-serif;
-            line-height: 1.6;
-            color: #e0e0e0;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 20px;
-            background-color: #1d1d1d;
+        @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500&display=swap");
+        * {
+          margin: 0;
+          padding: 0;
+          box-sizing: border-box;
+          font-family: "Poppins", sans-serif;
         }
-        .maintenance-banner {
-            background-color: #2a2a2a;
-            border-left: 5px solid #ffc107;
-            padding: 15px;
-            margin-bottom: 30px;
-            border-radius: 0 4px 4px 0;
-            color: #ffffff;
+      
+        .about-us {
+          display: flex;
+          align-items: center;
+          height: 100vh;
+          width: 100%;
+          padding: 90px 0;
+          background: #000; /* siyah arka plan */
         }
-        h1 {
-            color: #3498db;
-            border-bottom: 2px solid #3498db;
-            padding-bottom: 10px;
-            margin-top: 0;
+      
+        .pic {
+          height: auto;
+          width: 400px;
+          border-radius: 12px;
         }
-        .section {
-            background-color: #2a2a2a;
-            padding: 25px;
-            margin-bottom: 25px;
-            border-radius: 5px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
-            color: #e0e0e0;
+      
+        .about {
+          width: 1130px;
+          max-width: 85%;
+          margin: 0 auto;
+          display: flex;
+          align-items: center;
+          justify-content: space-around;
         }
-        .section-title {
-            color: #3498db;
-            margin-top: 0;
+      
+        .text {
+          width: 540px;
         }
-        .thank-you {
-            font-style: italic;
-            text-align: center;
-            margin-top: 40px;
-            padding: 20px;
-            background-color: #252525;
-            border-radius: 5px;
-            color: #ffffff;
-            border: 1px solid #3498db;
+      
+        .text h2 {
+          color: #fff; /* beyaz */
+          font-size: 90px;
+          font-weight: 600;
+          margin-bottom: 10px;
         }
-        ul {
-            padding-left: 20px;
+      
+        .text h5 {
+          color: #fff; /* beyaz */
+          font-size: 22px;
+          font-weight: 500;
+          margin-bottom: 20px;
         }
-        li {
-            margin-bottom: 8px;
+      
+        span {
+          color: #4070f4;
         }
-    </style>
-</head>
-<body>
-    <div class="maintenance-banner">
-        <strong>Planlı Bakım Çalışması:</strong> Sitemiz şu anda planlı bakım aşamasında olup, yakında tüm hizmetlerimizle tekrar hizmetinizde olacağız.
-    </div>
+      
+        .text p {
+          color: #fff; /* beyaz */
+          font-size: 18px;
+          line-height: 25px;
+          letter-spacing: 1px;
+        }
+      
+        .data {
+          margin-top: 30px;
+        }
+      
+        .hire {
+          font-size: 18px;
+          background: #4070f4;
+          color: #fff;
+          text-decoration: none;
+          border: none;
+          padding: 12px 25px;
+          border-radius: 6px;
+          transition: 0.5s;
+        }
+      
+        .hire:hover {
+          background: #fff;
+          color: #000;
+        }
+      </style>
+      
+    <section class="about-us">
+      <div class="about">
+        <img src="WhatsApp Image 2025-04-14 at 13.21.08.jpeg" class="pic" />
+        <div class="text">
+          <h2>Hakkımızda</h2>
+          <h5>Front&Back-end Developer</h5>
+         <p>Merhaba! Ben genç bir yazılımcıyım. Yazılım dünyasına olan ilgim sayesinde, sürekli öğrenerek kendimi geliştirmeye ve her projede bir adım daha ileri gitmeye çalışıyorum.
 
-    <h1>Hakkımızda</h1>
-
-    <div class="section">
-        <h2 class="section-title">Şirket Tarihçemiz</h2>
-        <p>Şirketimiz 2025 yılında kurulmuştur</p>
-    </div>
-
-    <div class="section">
-        <h2 class="section-title">Misyonumuz</h2>
-        <p>Müşterilerimize en kaliteli ürün ve hizmetleri sunarak yaşamlarını kolaylaştırmak ve değer katmaktır. Bunu yaparken etik değerlere bağlı kalarak sürdürülebilir büyümeyi hedefliyoruz.</p>
-    </div>
-
-    <div class="section">
-        <h2 class="section-title">Vizyonumuz</h2>
-        <p>Sektörümüzde küresel ölçekte tanınan, yenilikçi çözümleriyle fark yaratan ve çalışanlarıyla birlikte büyüyen bir marka olmaktır.</p>
-    </div>
-
-    <div class="section">
-        <h2 class="section-title">Değerlerimiz</h2>
-        <ul>
-            <li>Müşteri memnuniyeti odaklılık</li>
-            <li>Şeffaflık ve dürüstlük</li>
-            <li>Yenilikçilik ve sürekli gelişim</li>
-            <li>Topluma ve çevreye karşı sorumluluk</li>
-            <li>Takım çalışması ve sinerji</li>
-        </ul>
-    </div>
-
-    <div class="thank-you">
-        <p>Planlı bakım çalışmamız nedeniyle sabırla beklediğiniz için teşekkür ederiz. En kısa sürede daha iyi hizmet vermek için çalışıyoruz.</p>
-    </div>
-</body>
+            Front-end'den back-end'e kadar pek çok alanda çalıştım ve sade, işlevsel ve kullanıcı dostu çözümler üretmeyi hedefliyorum. İşime gösterdiğim özen ve disiplinle kurumsal bir ciddiyetle hareket ediyorum.
+            
+            Bu site ve içerikler, tamamen kodlara duyduğum sevgiyle şekillendi. Hem profesyonel hem samimi bir hizmet sunmak için buradayım. Destek verdiğiniz için teşekkür ederim!</p>
+         
+        </div>
+      </div>
+    </section>
+  </body>
 </html>
